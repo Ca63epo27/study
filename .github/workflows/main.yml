@@ -1,0 +1,27 @@
+#----------------------------------------
+#GitHub Actions Part 1 - Basics
+#----------------------------------------
+
+name: My-GitHubActions-Basics
+
+on: 
+  push: 
+    branches:
+      - main
+
+
+jobs:
+  my_testing:
+    runs-on: ubuntu-latest
+
+
+  steps:
+    - name: ping
+      run: 
+        ping -c4 8.8.8.8 > ping.txt
+
+    - check_result: 
+      run:
+        cat ping.txt
+        
+    
